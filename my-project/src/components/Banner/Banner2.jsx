@@ -17,7 +17,7 @@ const Banner2 = () => {
               viewport={{ once: true }}
               className="text-3xl font-bold uppercase lg:text-6xl"
             >
-              Brand Info
+              Online Fruit Store
             </motion.h1>
             <motion.p
               variants={FadeUp(0.7)}
@@ -32,16 +32,6 @@ const Banner2 = () => {
               and pineapples add a refreshing sweetness. With so many health
               benefits, fruits make a tasty and nutritious choice every day.
             </motion.p>
-            <motion.p
-              variants={FadeUp(0.9)}
-              initial="hidden"
-              whileInView="visible"
-              viewport={{ once: true }}
-            >
-              Fruits offer a burst of vitamins and flavors, from vitamin C-rich
-              oranges to antioxidant-packed berries. They’re delicious,
-              nutritious, and perfect for everyday snacking.
-            </motion.p>
             {/* Button section */}
             <motion.div
               variants={FadeUp(1.1)}
@@ -49,7 +39,7 @@ const Banner2 = () => {
               animate="visible"
               className="flex justify-center mt-5 md:justify-start"
             >
-              <button className="primary-btn">Learn More</button>
+              <button className="primary-btn">Download the App</button>
             </motion.div>
           </div>
         </div>

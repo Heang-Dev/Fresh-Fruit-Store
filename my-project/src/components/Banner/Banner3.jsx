@@ -2,6 +2,7 @@ import React from "react";
 import BannerPng from "../../assets/banner-bg.jpg";
 import { FadeLeft } from "../../utility/animation";
 import { motion } from "framer-motion";
+import { IoBagHandleOutline } from "react-icons/io5";
 
 const bgStyle = {
   backgroundImage: `url(${BannerPng})`,
@@ -12,7 +13,7 @@ const bgStyle = {
 
 const Banner3 = () => {
   return (
-    <section className="p-10">
+    <section className="px-10">
       <div
         style={bgStyle}
         className="container grid grid-cols-1 space-y-6 md:grid-cols-2 md:space-y-0 py-14 rounded-3xl"
@@ -29,7 +30,7 @@ const Banner3 = () => {
               viewport={{ once: true }}
               className="text-3xl font-bold uppercase lg:text-6xl"
             >
-              Brand Info
+              Get Fresh Fruits Today
             </motion.h1>
             <motion.p
               variants={FadeLeft(0.7)}
@@ -51,7 +52,12 @@ const Banner3 = () => {
               animate="visible"
               className="flex justify-center mt-5 md:justify-start"
             >
-              <button className="primary-btn">Learn More</button>
+              <button className="flex items-center gap-2 primary-btn">
+                <span>
+                  <IoBagHandleOutline />
+                </span>
+                Order Now
+              </button>
             </motion.div>
           </div>
         </div>
