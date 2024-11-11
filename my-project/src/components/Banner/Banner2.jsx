@@ -1,24 +1,12 @@
 import React from "react";
-import BannerPng from "../../assets/fruits-splash.png";
+import BannerPng from "../../assets/fruit-plate2.png";
 import { FadeUp } from "../../utility/animation";
 import { motion } from "framer-motion";
 
-const Banner = () => {
+const Banner2 = () => {
   return (
-    <section className="bg-secondary/10">
-      <div className="container grid grid-cols-1 space-y-6 overflow-hidden md:grid-cols-2 md:space-y-0 py-14">
-        {/* Banner Image */}
-        <div className="flex items-center justify-center">
-          <motion.img
-            initial={{ opacity: 0, scale: 0.5 }}
-            whileInView={{ opacity: 1, scale: 1 }}
-            transition={{ type: "spring", stiffness: 100, delay: 0.2 }}
-            viewport={{ once: true }}
-            src={BannerPng}
-            alt=""
-            className="w-[300px] md:max-w-[400px] h-full object-cover drop-shadow-2xl"
-          />
-        </div>
+    <section className="">
+      <div className="container grid grid-cols-1 space-y-6 overflow-hidden md:grid-cols-2 md:space-y-0 py-14 md:py-24">
         {/* Brand Info */}
         <div className="flex flex-col justify-center">
           <div className="text-center md:text-left space-y-4 lg:max-w-[400px]">
@@ -65,9 +53,21 @@ const Banner = () => {
             </motion.div>
           </div>
         </div>
+        {/* Banner Image */}
+        <div className="flex items-center justify-center">
+          <motion.img
+            initial={{ opacity: 0, scale: 0.5 }}
+            whileInView={{ opacity: 1, scale: 1 }}
+            transition={{ type: "spring", stiffness: 100, delay: 0.2 }}
+            viewport={{ once: true }}
+            src={BannerPng}
+            alt=""
+            className="w-[400px] md:max-w-[400px] h-full object-cover drop-shadow-2xl"
+          />
+        </div>
       </div>
     </section>
   );
 };
 
-export default Banner;
+export default Banner2;
