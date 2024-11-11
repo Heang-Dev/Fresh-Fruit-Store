@@ -15,7 +15,7 @@ const Footer = () => {
         initial={{ opacity: 0 }}
         whileInView={{ opacity: 1 }}
         transition={{ duration: 1, delay: 0.2 }}
-        className="container flex items-center justify-between"
+        className="container flex flex-col items-center justify-between md:flex-row"
       >
         {/* Logo section */}
         <div className="flex items-center gap-2 text-2xl font-bold uppercase">
@@ -24,7 +24,7 @@ const Footer = () => {
           <FaLeaf className="text-green-500" />
         </div>
         {/* Social icons section */}
-        <div className="flex items-center gap-4 mt-6 text-3xl text-gray-700">
+        <div className="flex items-center gap-4 my-3 text-2xl text-gray-700">
           <FaInstagram />
           <FaTwitter />
           <FaFacebook />
