@@ -1,17 +1,29 @@
 import React from "react";
-import BannerPng from "../../assets/fruit-plate2.png";
-import { FadeUp } from "../../utility/animation";
+import BannerPng from "../../assets/banner-bg.jpg";
+import { FadeLeft } from "../../utility/animation";
 import { motion } from "framer-motion";
 
-const Banner2 = () => {
+const bgStyle = {
+  backgroundImage: `url(${BannerPng})`,
+  backgroundPosition: "center",
+  backgroundSize: "cover",
+  backgroundRepeat: "no-repeat",
+};
+
+const Banner3 = () => {
   return (
-    <section className="">
-      <div className="container grid grid-cols-1 space-y-6 overflow-hidden md:grid-cols-2 md:space-y-0 py-14 md:py-24">
+    <section className="p-10">
+      <div
+        style={bgStyle}
+        className="container grid grid-cols-1 space-y-6 md:grid-cols-2 md:space-y-0 py-14 rounded-3xl"
+      >
+        {/* Blank div */}
+        <div></div>
         {/* Brand Info */}
         <div className="flex flex-col justify-center">
           <div className="text-center md:text-left space-y-4 lg:max-w-[400px]">
             <motion.h1
-              variants={FadeUp(0.5)}
+              variants={FadeLeft(0.5)}
               initial="hidden"
               whileInView="visible"
               viewport={{ once: true }}
@@ -20,7 +32,7 @@ const Banner2 = () => {
               Brand Info
             </motion.h1>
             <motion.p
-              variants={FadeUp(0.7)}
+              variants={FadeLeft(0.7)}
               initial="hidden"
               whileInView="visible"
               viewport={{ once: true }}
@@ -32,19 +44,9 @@ const Banner2 = () => {
               and pineapples add a refreshing sweetness. With so many health
               benefits, fruits make a tasty and nutritious choice every day.
             </motion.p>
-            <motion.p
-              variants={FadeUp(0.9)}
-              initial="hidden"
-              whileInView="visible"
-              viewport={{ once: true }}
-            >
-              Fruits offer a burst of vitamins and flavors, from vitamin C-rich
-              oranges to antioxidant-packed berries. They’re delicious,
-              nutritious, and perfect for everyday snacking.
-            </motion.p>
             {/* Button section */}
             <motion.div
-              variants={FadeUp(1.1)}
+              variants={FadeLeft(0.9)}
               initial="hidden"
               animate="visible"
               className="flex justify-center mt-5 md:justify-start"
@@ -53,21 +55,9 @@ const Banner2 = () => {
             </motion.div>
           </div>
         </div>
-        {/* Banner Image */}
-        <div className="flex items-center justify-center">
-          <motion.img
-            initial={{ opacity: 0, x: 200, rotate: 75 }}
-            whileInView={{ opacity: 1, x: 0, rotate: 0 }}
-            transition={{ duration: 1, delay: 0.2 }}
-            viewport={{ once: true }}
-            src={BannerPng}
-            alt=""
-            className="w-[400px] md:max-w-[400px] h-full object-cover drop-shadow-2xl"
-          />
-        </div>
       </div>
     </section>
   );
 };
 
-export default Banner2;
+export default Banner3;
