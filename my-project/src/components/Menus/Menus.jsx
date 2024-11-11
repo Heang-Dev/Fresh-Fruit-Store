@@ -3,6 +3,8 @@ import Fruit1 from "../../assets/fruits/apple.png";
 import Fruit2 from "../../assets/fruits/orange.png";
 import Fruit3 from "../../assets/fruits/avocado.png";
 import Fruit4 from "../../assets/fruits/cherry.png";
+import { FadeRight, FadeLeft } from "../../utility/animation";
+import { motion } from "framer-motion";
 
 const MenusData = [
   {
@@ -11,6 +13,7 @@ const MenusData = [
     link: "/",
     price: "$2.00",
     img: Fruit1,
+    delay: 0.3,
   },
   {
     id: 2,
@@ -18,6 +21,7 @@ const MenusData = [
     link: "/",
     price: "$1.49",
     img: Fruit2,
+    delay: 0.6,
   },
   {
     id: 3,
@@ -25,6 +29,7 @@ const MenusData = [
     link: "/",
     price: "$5.99",
     img: Fruit3,
+    delay: 0.9,
   },
   {
     id: 4,
@@ -32,6 +37,7 @@ const MenusData = [
     link: "/",
     price: "$7.00",
     img: Fruit4,
+    delay: 1.2,
   },
 ];
 
@@ -39,12 +45,23 @@ const Menus = () => {
   return (
     <section>
       <div className="container pt-12 pb-20">
-        <h1 className="pb-10 text-2xl font-bold text-left uppercase">
+        <motion.h1
+          initial={{ opacity: 0, x: -200 }}
+          whileInView={{ opacity: 1, x: 0 }}
+          transition={{ duration: 1, delay: 0.3 }}
+          className="pb-10 text-2xl font-bold text-left uppercase"
+        >
           Our Menu
-        </h1>
+        </motion.h1>
         <div className="grid grid-cols-1 gap-6 sm:grid-cols-2 md:grid-cols-4">
           {MenusData.map((menu) => (
-            <div className="bg-white rounded-3xl px-4 py-2 shadow-[0_0_22px_0_rgba(0,0,0,0.15)] flex justify-around items-center gap-4">
+            <motion.div
+              variants={FadeLeft(menu.delay)}
+              initial="hidden"
+              whileInView={"visible"}
+              whileHover={{ scale: 1.1 }}
+              className="bg-white rounded-3xl px-4 py-2 shadow-[0_0_22px_0_rgba(0,0,0,0.15)] flex justify-around items-center gap-4"
+            >
               <img
                 src={menu.img}
                 alt=""
@@ -56,7 +73,7 @@ const Menus = () => {
                   {menu.price}
                 </p>
               </div>
-            </div>
+            </motion.div>
           ))}
         </div>
       </div>
